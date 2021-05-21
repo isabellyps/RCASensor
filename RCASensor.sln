@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.WebAPI", "RCASensor.WebAPI\RCASensor.WebAPI.csproj", "{20D2C8E4-214A-446E-AB44-AB629DD707D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.Business", "RCASensor.Business\RCASensor.Business.csproj", "{65F4F459-D178-40F5-B4F6-ABAD6DB61331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.Repository", "RCASensor.Repository\RCASensor.Repository.csproj", "{3BB74A36-1CA0-4C79-A78B-0D874723358F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20D2C8E4-214A-446E-AB44-AB629DD707D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D2C8E4-214A-446E-AB44-AB629DD707D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D2C8E4-214A-446E-AB44-AB629DD707D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D2C8E4-214A-446E-AB44-AB629DD707D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F4F459-D178-40F5-B4F6-ABAD6DB61331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F4F459-D178-40F5-B4F6-ABAD6DB61331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F4F459-D178-40F5-B4F6-ABAD6DB61331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F4F459-D178-40F5-B4F6-ABAD6DB61331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A89B3D90-0536-48B5-BBBD-3B39058A3340}
+	EndGlobalSection
+EndGlobal
