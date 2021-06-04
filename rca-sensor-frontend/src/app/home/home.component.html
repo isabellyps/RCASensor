@@ -1,0 +1,114 @@
+<app-header></app-header>
+<div class="container">
+  <section class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6">
+      <label> País </label>
+      <select
+        class="form-select"
+        [(ngModel)]="filters.Country"
+        name="country"
+        id="country"
+      >
+        <option value="" disabled selected>Selecione o país</option>
+        <option value="">Todos</option>
+        <option *ngFor="let country of countries" [value]="country">
+          {{ country | titlecase }}
+        </option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+      <label value="">Região</label>
+      <select
+        class="form-select"
+        [(ngModel)]="filters.Region"
+        name="region"
+        id="region"
+      >
+        <option value="" disabled selected>Selecione a região</option>
+        <option value="">Todas</option>
+        <option *ngFor="let region of regions" [value]="region">
+          {{ region | titlecase }}
+        </option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+      <label>Sensor</label>
+      <select
+        class="form-select"
+        [(ngModel)]="filters.Sensor"
+        name="sensor"
+        id="sensor"
+      >
+        <option value="" disabled selected>Selecione o sensor</option>
+        <option value="">Todos</option>
+        <option *ngFor="let sensor of sensors" [value]="sensor">
+          {{ sensor | titlecase }}
+        </option>
+      </select>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-6">
+      <label>Status</label>
+      <select
+        class="form-select"
+        [(ngModel)]="filters.StatusEvent"
+        name="status"
+        id="status"
+      >
+        <option *ngFor="let status of statusEvent" [value]="status.id">
+          {{ status.status }}
+        </option>
+      </select>
+    </div>
+    <div class="col-lg-1 col-sm-12 mx-auto">
+      <button type="button" class="btn btn-primary" (click)="filter()">
+        Filtrar
+      </button>
+    </div>
+  </section>
+  <section class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>País</th>
+          <th>Região</th>
+          <th>Sensor</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table-active"
+          *ngFor="
+            let event of events
+              | paginate
+                : {
+                    itemsPerPage: filters.AmountItemsShow,
+                    currentPage: filters.Page,
+                    totalItems: amount
+                  }
+          "
+        >
+          <td>{{ event.country | titlecase }}</td>
+          <td>{{ event.region | titlecase }}</td>
+          <td>{{ event.sensor | titlecase }}</td>
+          <td *ngIf="event.value != '' || event.value">
+            <fa-icon style="color: 'green'" [icon]="faCheck"></fa-icon>
+          </td>
+          <td *ngIf="event.value == '' || !event.value">
+            <fa-icon style="color: 'red'" [icon]="faTimes"></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<div class="container">
+  <div class="pagination justify-content-center">
+    <pagination-controls
+      (pageChange)="getPage($event)"
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+    ></pagination-controls>
+  </div>
+</div>

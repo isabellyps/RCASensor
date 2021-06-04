@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.WebAPI", "RCASensor.WebAPI\RCASensor.WebAPI.csproj", "{20D2C8E4-214A-446E-AB44-AB629DD707D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCASensor.WebAPI", "RCASensor.WebAPI\RCASensor.WebAPI.csproj", "{20D2C8E4-214A-446E-AB44-AB629DD707D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.Business", "RCASensor.Business\RCASensor.Business.csproj", "{65F4F459-D178-40F5-B4F6-ABAD6DB61331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCASensor.Business", "RCASensor.Business\RCASensor.Business.csproj", "{65F4F459-D178-40F5-B4F6-ABAD6DB61331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.Repository", "RCASensor.Repository\RCASensor.Repository.csproj", "{3BB74A36-1CA0-4C79-A78B-0D874723358F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCASensor.Repository", "RCASensor.Repository\RCASensor.Repository.csproj", "{3BB74A36-1CA0-4C79-A78B-0D874723358F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RCASensor.Model", "RCASensor.Model\RCASensor.Model.csproj", "{6E070679-C4A4-4A2C-8DA8-971836920B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCASensor.Utils", "RCASensor.Utils\RCASensor.Utils.csproj", "{6CB9025E-09A0-42DD-B410-B1F107B20989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB74A36-1CA0-4C79-A78B-0D874723358F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E070679-C4A4-4A2C-8DA8-971836920B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E070679-C4A4-4A2C-8DA8-971836920B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E070679-C4A4-4A2C-8DA8-971836920B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E070679-C4A4-4A2C-8DA8-971836920B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB9025E-09A0-42DD-B410-B1F107B20989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB9025E-09A0-42DD-B410-B1F107B20989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB9025E-09A0-42DD-B410-B1F107B20989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB9025E-09A0-42DD-B410-B1F107B20989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

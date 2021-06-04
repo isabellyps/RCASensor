@@ -1,17 +1,15 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.OpenApi.Models;
+using RCASensor.Business;
+using RCASensor.Model.EntityModel;
+using RCASensor.Model.FilterModel;
+using RCASensor.Repository;
 
 namespace RCASensor.WebAPI
 {
@@ -27,12 +25,23 @@ namespace RCASensor.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IEventBusiness, EventBusiness>();
+            services.AddScoped<IEventRepository, EventRepository>();
+
             services.AddControllers();
+            services.AddCors();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RCA Sensor", Version = "v1" });
             });
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<EventInfoViewModel, Event>().ReverseMap();
+            });
+            IMapper mapper = config.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +57,8 @@ namespace RCASensor.WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(option => option.AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
